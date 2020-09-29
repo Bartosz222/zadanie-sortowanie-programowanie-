@@ -10,8 +10,11 @@ class sortowanie{
 		ifstream plik1;
 		ofstream plik2;
 		vector <string> tab;
+		vector <int> t;
+		string napis;
+		int liczba;
+		int liczba2;
 		
-	
 	sortowanie();
 	~sortowanie();
 	void menu();
@@ -21,6 +24,7 @@ class sortowanie{
 	void sortowanieA();
 	void sortowanieB();
 	void sortowanieC();
+	void sortowanieD();
 };
 sortowanie::sortowanie(){
 	plik1.open("wejscie.txt");
@@ -55,6 +59,9 @@ void sortowanie::wMenu(int x){
 			break;
 		case 4:
 			sortowanieC();
+			break;
+		case 5:
+			sortowanieD();
 			break;
 	}
 }
@@ -97,8 +104,28 @@ void sortowanie::sortowanieB(){
 	menu();
 }
 void sortowanie::sortowanieC(){
-	for(int i=0;i<=tab.size()i++){
-		
+	t.clear();
+	for(int i=0;i<=tab.size();i++){
+		napis = tab[i];
+		t.push_back(napis.length());
+		napis="";
+	}
+	sort(t.begin(),t.end());
+	for(int i=0;i<=t.size()-2;i++){
+		cout<<t[i]<<endl;
+	}
+    system("pause");
+	system("cls");
+	menu();
+}
+void sortowanie::sortowanieD(){
+	t.clear();
+	for(int i=0;i<=tab.size();i++){
+		napis = tab[i];
+		for(int j=0;j<=napis.length();j++){
+			liczba = (int)napis[i]-96;
+			
+		}
 	}
 }
 void sortowanie::wypisz(){
